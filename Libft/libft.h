@@ -6,7 +6,7 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:53:09 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/25 12:21:30 by chilee           ###   ########.fr       */
+/*   Updated: 2021/11/25 19:25:16 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,19 @@
 #include <bsd/string.h>
 #include <stdio.h> // a supprimer
 
-int	isalpha(int c);
-int	isdigit(int c);
-int isalnum(int c);
-int	isascii(int c);
-int isprint(int c);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+
+char	*strchr(const char *s, int c);
 
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);

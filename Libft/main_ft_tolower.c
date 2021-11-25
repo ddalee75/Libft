@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   main_ft_tolower.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 13:27:41 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/25 15:37:00 by chilee           ###   ########.fr       */
+/*   Created: 2021/11/25 18:16:18 by chilee            #+#    #+#             */
+/*   Updated: 2021/11/25 18:32:24 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int	main(void)
 {
-	char		*ptrd;
-	const char	*ptrs;
-	size_t		i;
-
-	ptrd = (char *)dest;
-	ptrs = (const char *)src;
-	if ((src < dest) && (dest < src + n))
+	size_t i;
+	char str[] = "YOU ARE the Best 42 *=*";
+	size_t len_s;
+	
+	i = 0;
+	len_s = ft_strlen(str);
+	while (i <= len_s)
 	{
-		while (n > 0)
-		{
-			ptrd[n - 1] = ptrs[n - 1];
-			n--;
-		}
+		putchar(ft_tolower(str[i]));
+		i++;
 	}
-	else
-	{
-		i = 0;
-		while (i < n)
-		{
-			ptrd[i] = ptrs[i];
-			i++;
-		}
-	}
-	return (dest);
+	putchar('\n');
+	return (0);
 }
