@@ -6,7 +6,7 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:53:09 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/25 19:25:16 by chilee           ###   ########.fr       */
+/*   Updated: 2021/11/26 20:10:53 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
-char	*strchr(const char *s, int c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
