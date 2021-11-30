@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   main_ft_strlcat.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 10:43:16 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/30 13:33:09 by chilee           ###   ########.fr       */
+/*   Created: 2021/11/25 16:17:30 by chilee            #+#    #+#             */
+/*   Updated: 2021/11/30 17:55:08 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	main(void)
 {
-	size_t	i;
-	size_t	len_src;
+	const char	src[100] = "Hello World";
+	char	dst[100] = "you";
+	printf("%ld\n", strlcat(dst, src, 11));
+	printf("%s\n", dst);
 
-	len_src = ft_strlen(src);
-	i = 0;
-	if (size > 0)
-	{
-		while (src[i] && i < size -1)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
-	}
-	return (len_src);
+	const char	src2[100] = "Hello World";
+	char	dst2[100] = "you";
+	printf("%ld\n", ft_strlcat(dst2, src2, 11));
+	printf("%s\n", dst2);	
+	return (0);
 }

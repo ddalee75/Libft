@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strncmp.c                                  :+:      :+:    :+:   */
+/*   main_ft_atoi.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 18:43:26 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/26 20:10:44 by chilee           ###   ########.fr       */
+/*   Created: 2021/11/30 11:11:17 by chilee            #+#    #+#             */
+/*   Updated: 2021/11/30 15:55:35 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,26 @@
 
 int	main(void)
 {
-	const char s1[] = "Hello wonderful world";
-	const char s2[] = "Helso xonderful world";
+	const	char nptr[] = "+424233-";
+	printf("%d\n", atoi(nptr));
+	printf("%d\n", ft_atoi(nptr));
+	printf("\n");
+
+	const	char nptr1[] = "-4 2 4 2 3 3";
+	printf("%d\n", atoi(nptr1));
+	printf("%d\n", ft_atoi(nptr1));
+	printf("\n");
 	
-	printf("%d\n", strncmp("test\200", "test\0", 6));
-	printf("%d\n", ft_strncmp("test\200", "test\0", 6));
+	const	char nptr2[] = "--424233";
+	printf("%d\n", atoi(nptr2));
+	printf("%d\n", ft_atoi(nptr2));
+	printf("\n");
+
+	const	char nptr3[] = " 042+4-233";
+	printf("%d\n", atoi(nptr3));
+	printf("%d\n", ft_atoi(nptr3));
+	printf("\n");
+
+
 	return (0);
 }

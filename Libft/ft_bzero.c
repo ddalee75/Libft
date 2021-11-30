@@ -6,7 +6,7 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:08:32 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/23 17:50:45 by chilee           ###   ########.fr       */
+/*   Updated: 2021/11/30 19:40:35 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*ptr;
-	size_t	i;
+	unsigned char	*ptr;
+	size_t			i;
 
-	ptr = (char *)s;
+	ptr = (unsigned char *)s;
 	i = 0;
-	while (ptr[i] && i < n)
+	while (i < n)
 	{
 		ptr[i] = '\0';
 		i++;

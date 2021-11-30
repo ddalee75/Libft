@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 10:43:16 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/30 13:33:09 by chilee           ###   ########.fr       */
+/*   Created: 2021/11/30 10:38:12 by chilee            #+#    #+#             */
+/*   Updated: 2021/11/30 15:43:29 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_atoi(const char *nptr)
 {
-	size_t	i;
-	size_t	len_src;
+	int	resultat;
+	int	sign;
+	int	i;
 
-	len_src = ft_strlen(src);
+	sign = 1;
+	resultat = 0;
 	i = 0;
-	if (size > 0)
+	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-')
 	{
-		while (src[i] && i < size -1)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		sign *= -1;
+		i++;
 	}
-	return (len_src);
+	else if (nptr[i] == '+')
+		i++;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		resultat = resultat * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (resultat * sign);
 }
