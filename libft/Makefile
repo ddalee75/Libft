@@ -6,7 +6,7 @@
 #    By: chilee <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 11:12:22 by chilee            #+#    #+#              #
-#    Updated: 2021/12/02 13:28:52 by chilee           ###   ########.fr        #
+#    Updated: 2021/12/02 16:55:46 by chilee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,6 @@ OBJS = $(SRCS:.c=.o)
 CC = gcc
 RM = rm -f
 FLAGS = -Wall -Wextra -Werror
-HEADER = ./
 
 all : $(NAME)
 
@@ -49,7 +48,7 @@ $(NAME) : $(OBJS)
 	ar rc $@ $^
 
 %.o : %.c libft.h
-	$(CC) $(FLAGS) -o $@ -I (HEADER) -c $<
+	$(CC) $(FLAGS) -o $@ -c $<
 
 .PHONY: clean flcean re all
 
@@ -60,3 +59,7 @@ fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
