@@ -6,7 +6,7 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:17:30 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/01 13:28:15 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/02 11:49:21 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int	main(void)
 {
 	const char	src[100] = "Hello World";
 	char	dst[100] = "you";
-	printf("%ld\n", strlcat(dst, src, 11));
+	printf("%ld\n", strlcat(dst, src, 4));
 	printf("%s\n", dst);
 
 	const char	src2[100] = "Hello World";
 	char	dst2[100] = "you";
-	printf("%ld\n", ft_strlcat(dst2, src2, 11));
+	printf("%ld\n", ft_strlcat(dst2, src2, 4));
 	printf("%s\n", dst2);	
 	printf("\n");
 
