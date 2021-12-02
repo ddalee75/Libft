@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strlcat.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 16:17:30 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/30 17:55:08 by chilee           ###   ########.fr       */
+/*   Created: 2021/12/01 15:57:34 by chilee            #+#    #+#             */
+/*   Updated: 2021/12/01 17:24:45 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+char	*ft_strdup(const char *s)
 {
-	const char	src[100] = "Hello World";
-	char	dst[100] = "you";
-	printf("%ld\n", strlcat(dst, src, 11));
-	printf("%s\n", dst);
+	int		i;
+	char	*dup;
+	int		len_s;
 
-	const char	src2[100] = "Hello World";
-	char	dst2[100] = "you";
-	printf("%ld\n", ft_strlcat(dst2, src2, 11));
-	printf("%s\n", dst2);	
-	return (0);
+	i = 0;
+	len_s = ft_strlen(s);
+	dup = (char *)malloc(sizeof(char) * (len_s + 1));
+	if (dup == 0)
+		return (NULL);
+	while (s[i])
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }

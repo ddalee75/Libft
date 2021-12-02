@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strncmp.c                                  :+:      :+:    :+:   */
+/*   main_ft_strdup.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 18:43:26 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/30 18:20:20 by chilee           ###   ########.fr       */
+/*   Created: 2021/12/01 16:15:41 by chilee            #+#    #+#             */
+/*   Updated: 2021/12/01 17:25:12 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 int	main(void)
 {
-//	const char s1[] = "Hello wonderful world";
-//	const char s2[] = "Helso xonderful world";
+	char *dup;
+	char *dup2;
+
+	dup = strdup("hello paris");
 	
-	printf("%d\n", strncmp("test\200", "test\0", 6));
-	printf("%d\n", ft_strncmp("test\200", "test\0", 6));
+	printf("%s %ld\n", dup, strlen(dup));
+	dup2 = ft_strdup("hello paris");
+	printf("%s %ld\n", dup2, strlen(dup2));
+	
 	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strncmp.c                                  :+:      :+:    :+:   */
+/*   main_ft_substr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 18:43:26 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/30 18:20:20 by chilee           ###   ########.fr       */
+/*   Created: 2021/12/01 18:05:24 by chilee            #+#    #+#             */
+/*   Updated: 2021/12/02 10:17:40 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,23 @@
 
 int	main(void)
 {
-//	const char s1[] = "Hello wonderful world";
-//	const char s2[] = "Helso xonderful world";
-	
-	printf("%d\n", strncmp("test\200", "test\0", 6));
-	printf("%d\n", ft_strncmp("test\200", "test\0", 6));
+	char s[] = "Hello World, what a wonderful woorld";
+	char *dest;
+	char *dest1;
+
+	dest = ft_substr(s, 530, 11);
+	dest1 = ft_substr(s, 30, 11);
+	printf("%p\n", dest);
+	printf("%s\n", dest1);
 	return (0);
 }
+
+/*int	main(void)
+{
+	char	str[] = "lorem ipsum dolor sit amet";
+	char	*strsub;
+	if (!(strsub = ft_substr(str, 400, 20)))
+			printf("NULL");
+	return (0);
+
+}*/

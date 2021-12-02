@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 09:38:53 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/29 11:41:33 by chilee           ###   ########.fr       */
+/*   Created: 2021/12/01 17:27:00 by chilee            #+#    #+#             */
+/*   Updated: 2021/12/01 19:17:39 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char	*src;
-	size_t			i;
+	char	*dest;
+	size_t	i;
+	size_t	j;
 
-	src = (unsigned char *)s;
 	i = 0;
-	if (i < n)
+	j = 0;
+	if (ft_strlen(s) < start)
+		return (NULL);
+	dest = (char *)malloc(sizeof(char) * (len + 1));
+	if (dest == 0)
+		return (NULL);
+	while (s[i])
 	{
-		if (src[i] == c)
-			return ((unsigned char *)src + i);
+		if (i >= start && j < len)
+		{
+			dest[j] = s[i];
+			j++;
+		}
 		i++;
 	}
-	return (0);
+	dest[j] = '\0';
+	return (dest);
 }

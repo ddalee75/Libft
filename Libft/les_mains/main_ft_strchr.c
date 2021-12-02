@@ -6,7 +6,7 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:09:41 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/26 15:03:24 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/01 12:17:13 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(void)
 	int c;
 	int d;
 	int e;
+
 
 	c = 'b';	
 	printf("%s\n", strchr(s, c));
@@ -32,6 +33,8 @@ int	main(void)
 	printf("%p\n", strchr(s, e));
 	printf("%p\n", ft_strchr(s, e));
 
+	printf("%p\n", strchr(s, '\0'));
+	printf("%p\n", ft_strchr(s, '\0'));
 
 	return (0); 
 }

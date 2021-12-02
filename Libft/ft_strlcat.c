@@ -6,7 +6,7 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 15:37:42 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/25 16:49:36 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/01 13:12:45 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	if (size > len_dst)
 	{
-		while (src && i < (size - 1) - len_dst)
+		while (src[i] && i < (size - 1) - len_dst)
 		{
 			dst[len_dst + i] = src[i];
 			i++;

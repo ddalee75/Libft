@@ -6,11 +6,9 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 18:36:33 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/26 15:03:43 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/01 12:08:58 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {	
@@ -23,5 +21,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s + i);
 		i++;
 	}
+	if (c == '\0')
+		return ((char *)s + i);
 	return (0);
 }

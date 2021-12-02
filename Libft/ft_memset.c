@@ -6,7 +6,7 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 10:09:01 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/23 15:58:27 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/01 19:40:59 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	ptr = (char *)s;
 	i = 0;
-	while (ptr[i] && i < n)
+	while (i < n)
 	{
 		ptr[i] = c;
 		i++;
