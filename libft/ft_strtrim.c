@@ -6,7 +6,7 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:21:51 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/06 18:31:08 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/06 19:40:17 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_is_set(char c, char const *set)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (set[i])
@@ -28,9 +28,9 @@ static int	ft_is_set(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	start;
-	unsigned int	len;	
-	char			*dest;
+	size_t	start;
+	size_t	len;
+	char	*dest;
 
 	start = 0;
 	if (s1 == NULL || set == NULL)
@@ -43,6 +43,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		dest = (char *)malloc(sizeof(char) * (1));
 		if (dest == NULL)
 			return (NULL);
+		ft_memset(dest, '\0', 1);
 		return (dest);
 	}
 	while (ft_is_set(s1[len -1], set))
