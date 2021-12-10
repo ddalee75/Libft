@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_substr.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 18:05:24 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/06 16:55:41 by chilee           ###   ########.fr       */
+/*   Created: 2021/12/10 16:32:10 by chilee            #+#    #+#             */
+/*   Updated: 2021/12/10 17:47:32 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char s[] = "Hello World";
-	char *dest;
-	char *dest1;
-
-	dest = ft_substr(s, 6, 5);
-	dest1 = ft_substr(s, 6, 5);
-	printf("%p\n", dest);
-	printf("%s", dest1);
-	return (0);
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else
+	{
+		if (n < 0)
+		{
+			n *= -1;
+			ft_putchar_fd('-', fd);
+		}
+		if (n > 9)
+			ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
 }
-
-/*int	main(void)
-{
-	char	str[] = "lorem ipsum dolor sit amet";
-	char	*strsub;
-	if (!(strsub = ft_substr(str, 400, 20)))
-			printf("NULL");
-	return (0);
-
-}*/

@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_substr.c                                   :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 18:05:24 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/06 16:55:41 by chilee           ###   ########.fr       */
+/*   Created: 2021/12/10 15:13:02 by chilee            #+#    #+#             */
+/*   Updated: 2021/12/10 15:36:33 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char s[] = "Hello World";
-	char *dest;
-	char *dest1;
+	unsigned int	i;
 
-	dest = ft_substr(s, 6, 5);
-	dest1 = ft_substr(s, 6, 5);
-	printf("%p\n", dest);
-	printf("%s", dest1);
-	return (0);
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		(*f)(i, s + i);
+		i++;
+	}
 }
-
-/*int	main(void)
-{
-	char	str[] = "lorem ipsum dolor sit amet";
-	char	*strsub;
-	if (!(strsub = ft_substr(str, 400, 20)))
-			printf("NULL");
-	return (0);
-
-}*/

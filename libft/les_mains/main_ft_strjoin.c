@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_substr.c                                   :+:      :+:    :+:   */
+/*   main_ft_strjoin.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 18:05:24 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/06 16:55:41 by chilee           ###   ########.fr       */
+/*   Created: 2021/12/03 11:48:27 by chilee            #+#    #+#             */
+/*   Updated: 2021/12/03 12:19:05 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,11 @@
 
 int	main(void)
 {
-	char s[] = "Hello World";
+	char s1[] = "hello paris";
+	char s2[] = "hello world";
 	char *dest;
-	char *dest1;
 
-	dest = ft_substr(s, 6, 5);
-	dest1 = ft_substr(s, 6, 5);
-	printf("%p\n", dest);
-	printf("%s", dest1);
+	dest = ft_strjoin(s1, s2);
+	printf("%s\n", dest);
 	return (0);
 }
-
-/*int	main(void)
-{
-	char	str[] = "lorem ipsum dolor sit amet";
-	char	*strsub;
-	if (!(strsub = ft_substr(str, 400, 20)))
-			printf("NULL");
-	return (0);
-
-}*/

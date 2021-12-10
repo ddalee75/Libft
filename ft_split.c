@@ -6,32 +6,21 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:58:51 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/09 19:02:13 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/08 15:19:52 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_malloc_error(char **tab)
+static int	ft_countword(char const *s, char c)
 {
-	size_t	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-}
-
-static size_t	ft_countword(char const *s, char c)
-{
-	size_t	tab_nb;
-	size_t	i;
+	int	tab_nb;
+	int	i;
 
 	i = 0;
 	tab_nb = 0;
+	if (!s || !c)
+		return (0);
 	while (s[i])
 	{
 		while (s[i] == c && s[i])
@@ -48,8 +37,8 @@ static size_t	ft_countword(char const *s, char c)
 
 static char	*ft_cpyword(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
+	int		i;
+	int		j;
 	char	*cpy;
 
 	i = 0;
@@ -70,28 +59,27 @@ static char	*ft_cpyword(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	place_tab;
+	int		i;
+	int		place_tab;
 	char	**tab;
 
+	i = 0;
 	place_tab = 0;
 	tab = (char **)malloc(sizeof(char *) * (ft_countword(s, c) + 1));
 	if (!tab)
 		return (NULL);
-	while (*s)
+	while (place_tab < ft_countword(s, c))
 	{
-		while (*s == c && *s)
-			s++;
-		if (*s != c && *s)
+		while (s[i] == c && s[i])
+			i++;
+		if (s[i] != c && s[i])
 		{
-			tab[place_tab++] = ft_cpyword(s, c);
-			if (!(tab[place_tab - 1]))
-			{
-				ft_malloc_error(tab);
-				return (NULL);
-			}
-			s = s + ft_strlen(tab[place_tab - 1]);
+			tab[place_tab] = ft_cpyword(s + i, c);
+			place_tab++;
+			while (s[i] != c && s[i])
+				i++;
 		}
 	}
-	tab[place_tab] = NULL;
+	tab[place_tab] = '\0';
 	return (tab);
 }

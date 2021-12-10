@@ -6,7 +6,7 @@
 #    By: chilee <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 11:12:22 by chilee            #+#    #+#              #
-#    Updated: 2021/12/02 16:55:46 by chilee           ###   ########.fr        #
+#    Updated: 2021/12/10 16:32:00 by chilee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = libft.a
 SRCS = ft_isalpha.c \
 ft_isdigit.c \
 ft_isalnum.c \
-ft_isascii.c\
+ft_isascii.c \
 ft_isprint.c \
 ft_strlen.c \
 ft_memset.c \
@@ -35,7 +35,17 @@ ft_strnstr.c \
 ft_atoi.c \
 ft_calloc.c \
 ft_strdup.c \
-ft_substr.c 
+ft_substr.c \
+ft_strjoin.c \
+ft_strtrim.c \
+ft_split.c \
+ft_itoa.c \
+ft_strmapi.c \
+ft_striteri.c \
+ft_putchar_fd.c \
+ft_putstr_fd.c \
+ft_putendl_fd.c \
+ft_putnbr_fd.c
 
 OBJS = $(SRCS:.c=.o)
 CC = gcc
@@ -61,5 +71,5 @@ fclean : clean
 re : fclean all
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRCS)
 	gcc -nostartfiles -shared -o libft.so $(OBJS)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_substr.c                                   :+:      :+:    :+:   */
+/*   main_ft_strtrim.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 18:05:24 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/06 16:55:41 by chilee           ###   ########.fr       */
+/*   Created: 2021/12/06 14:03:37 by chilee            #+#    #+#             */
+/*   Updated: 2021/12/06 18:52:25 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,11 @@
 
 int	main(void)
 {
-	char s[] = "Hello World";
+	char const s1[] = "   xxxtripouille   xxx";
+	char const set[] = " x";
 	char *dest;
-	char *dest1;
 
-	dest = ft_substr(s, 6, 5);
-	dest1 = ft_substr(s, 6, 5);
-	printf("%p\n", dest);
-	printf("%s", dest1);
-	return (0);
+	dest = ft_strtrim(s1, set);
+	printf("%s", dest);
+	return (0); 
 }
-
-/*int	main(void)
-{
-	char	str[] = "lorem ipsum dolor sit amet";
-	char	*strsub;
-	if (!(strsub = ft_substr(str, 400, 20)))
-			printf("NULL");
-	return (0);
-
-}*/

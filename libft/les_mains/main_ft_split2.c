@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_substr.c                                   :+:      :+:    :+:   */
+/*   main_ft_split2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 18:05:24 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/06 16:55:41 by chilee           ###   ########.fr       */
+/*   Created: 2021/12/08 11:16:22 by chilee            #+#    #+#             */
+/*   Updated: 2021/12/08 11:18:16 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//test countword
 int	main(void)
 {
-	char s[] = "Hello World";
-	char *dest;
-	char *dest1;
+	const char s[] = "hello world hello paris";
+	char c;
+	int	tab_nb;
 
-	dest = ft_substr(s, 6, 5);
-	dest1 = ft_substr(s, 6, 5);
-	printf("%p\n", dest);
-	printf("%s", dest1);
-	return (0);
+	c = ' ';
+	tab_nb = ft_countword(s, c);
+	printf("%d\n", tab_nb);
+	return (0); 
 }
 
-/*int	main(void)
+//test cpyworld
+int	main(void)
 {
-	char	str[] = "lorem ipsum dolor sit amet";
-	char	*strsub;
-	if (!(strsub = ft_substr(str, 400, 20)))
-			printf("NULL");
-	return (0);
+	const char s[] = "hello world hello paris";
+	char c;
+	char *tab;
 
-}*/
+	c = ' ';
+	tab = (char *)ft_cpyword(s, c);
+	printf("%s\n", tab);
+	return (0);
+}

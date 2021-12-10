@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_substr.c                                   :+:      :+:    :+:   */
+/*   main_ft_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 18:05:24 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/06 16:55:41 by chilee           ###   ########.fr       */
+/*   Created: 2021/12/08 10:45:36 by chilee            #+#    #+#             */
+/*   Updated: 2021/12/08 20:16:28 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,20 @@
 
 int	main(void)
 {
-	char s[] = "Hello World";
-	char *dest;
-	char *dest1;
+	const char s[] = "       split       this for   me  !       ";
+	char c;
+	char **tab;
+	int i;
 
-	dest = ft_substr(s, 6, 5);
-	dest1 = ft_substr(s, 6, 5);
-	printf("%p\n", dest);
-	printf("%s", dest1);
+	i = 0;
+	c = '\0';
+
+	while (tab[i])
+	{ 
+		tab = ft_split(s, c);
+	//	printf("%p\n", tab[i]);
+		printf("%s\n", tab[i]);
+		i++;
+	}
 	return (0);
 }
-
-/*int	main(void)
-{
-	char	str[] = "lorem ipsum dolor sit amet";
-	char	*strsub;
-	if (!(strsub = ft_substr(str, 400, 20)))
-			printf("NULL");
-	return (0);
-
-}*/

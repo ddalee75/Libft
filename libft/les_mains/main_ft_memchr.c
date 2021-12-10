@@ -6,7 +6,7 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 10:40:53 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/01 11:12:07 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/07 11:22:49 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	main(void)
 	unsigned char	s1[50] = "hello paris, hello everyone";
 	unsigned char	s2[50] = "hello paris, hello everyone";
 
-	printf("%s\n", (unsigned char *)memchr(s1, 'o', 20));
-	printf("%p\n", (unsigned char *)memchr(s1, 'o', 20));
+	printf("%s\n", (unsigned char *)memchr(s1, 'o', 5));
+	printf("%p\n", (unsigned char *)memchr(s1, 'o', 5));
 	
 	printf("%s\n", (unsigned char *)ft_memchr(s2, 'o', 20));
 	printf("%p\n", (unsigned char *)ft_memchr(s2, 'o', 20));
@@ -27,6 +27,10 @@ int	main(void)
 	printf("%s\n", (char *)memchr(tab, -1, 7));
 	printf("%s\n", (char *)ft_memchr(tab, -1, 7));
 
+	char	s3[] = {0, 1, 2, 3, 4, 5};
+	printf("%s\n", (unsigned char *)memchr(s3, 2+256, 3));
+	printf("%s\n", (unsigned char *)ft_memchr(s3, 2+256, 3));
 	return (0);
+	
 
 }
