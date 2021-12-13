@@ -6,7 +6,7 @@
 #    By: chilee <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 11:12:22 by chilee            #+#    #+#              #
-#    Updated: 2021/12/10 16:32:00 by chilee           ###   ########.fr        #
+#    Updated: 2021/12/13 18:23:26 by chilee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,14 @@ ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c
 
+BONUS = ft_lstnew.c \
+ft_lstadd_front.c \
+ft_lstsize.c \
+ft_lstlast.c \
+ft_lstadd_back.c
+
 OBJS = $(SRCS:.c=.o)
+OBJSBONUS = $(BONUS:.c=.o)
 CC = gcc
 RM = rm -f
 FLAGS = -Wall -Wextra -Werror
@@ -57,13 +64,16 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	ar rc $@ $^
 
+bonus : $(OBJS) $(OBJSBONUS)
+	ar rc $(NAME) $^
+
 %.o : %.c libft.h
 	$(CC) $(FLAGS) -o $@ -c $<
 
-.PHONY: clean flcean re all
+.PHONY: clean flcean re all bonus
 
 clean :
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJSBONUS)
 
 fclean : clean
 	$(RM) $(NAME)
@@ -71,5 +81,5 @@ fclean : clean
 re : fclean all
 
 so:
-	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRCS) $(BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS)

@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   main_ft_lstnew.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 16:32:10 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/10 18:55:48 by chilee           ###   ########.fr       */
+/*   Created: 2021/12/13 11:01:53 by chilee            #+#    #+#             */
+/*   Updated: 2021/12/13 11:29:16 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	main(void)
 {
-	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
-	else
-	{
-		if (n < 0)
-		{
-			n *= -1;
-			ft_putchar_fd('-', fd);
-		}
-		if (n > 9)
-			ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(n % 10 + '0', fd);
-	}
+	printf("%p\n", ft_lstnew("Hello"));
+	return (0);
 }
