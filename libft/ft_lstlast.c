@@ -6,7 +6,7 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:42:19 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/13 20:00:13 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/14 10:41:18 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
-	while (lst->next != NULL)
-	{
+	while (lst->next) 
 		lst = lst->next;
-	}
 	return (lst);
 }
