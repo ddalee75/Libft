@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 16:19:58 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/14 17:56:10 by chilee           ###   ########.fr       */
+/*   Created: 2021/12/14 18:43:16 by chilee            #+#    #+#             */
+/*   Updated: 2021/12/14 18:50:48 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	i;
 
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i])
-		i++;
-	write (fd, s, i);
-	write (fd, "\n", 1);
 }

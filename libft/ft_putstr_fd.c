@@ -6,7 +6,7 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 16:03:13 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/10 16:19:16 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/14 17:54:51 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return ;
 	while (s[i])
 		i++;
 	write (fd, s, i);

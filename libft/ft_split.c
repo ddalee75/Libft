@@ -6,7 +6,7 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:58:51 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/09 19:02:13 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/14 17:52:21 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ char	**ft_split(char const *s, char c)
 {
 	size_t	place_tab;
 	char	**tab;
-
+	if (!s)
+		return (NULL);
 	place_tab = 0;
 	tab = (char **)malloc(sizeof(char *) * (ft_countword(s, c) + 1));
 	if (!tab)
