@@ -6,7 +6,7 @@
 #    By: chilee <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 11:12:22 by chilee            #+#    #+#              #
-#    Updated: 2021/12/15 17:37:10 by chilee           ###   ########.fr        #
+#    Updated: 2021/12/15 14:52:04 by chilee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,3 +87,7 @@ fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
+
+so:
+	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRCS) $(BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS)
