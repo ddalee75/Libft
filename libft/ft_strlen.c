@@ -6,10 +6,11 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 19:31:00 by chilee            #+#    #+#             */
-/*   Updated: 2021/11/22 19:59:49 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/15 17:07:23 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {
