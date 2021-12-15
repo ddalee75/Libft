@@ -6,7 +6,7 @@
 #    By: chilee <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 11:12:22 by chilee            #+#    #+#              #
-#    Updated: 2021/12/14 18:47:05 by chilee           ###   ########.fr        #
+#    Updated: 2021/12/15 14:52:04 by chilee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,9 +58,13 @@ ft_lstiter.c \
 ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
+
 OBJSBONUS = $(BONUS:.c=.o)
+
 CC = gcc
+
 RM = rm -f
+
 FLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
