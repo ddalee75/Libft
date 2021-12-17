@@ -6,13 +6,13 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:58:51 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/08 16:12:39 by chilee           ###   ########.fr       */
+/*   Updated: 2021/12/15 14:36:30 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_clean(char **tab)
+static void	ft_malloc_error(char **tab)
 {
 	size_t	i;
 
@@ -25,15 +25,13 @@ static void	ft_clean(char **tab)
 	free(tab);
 }
 
-static int	ft_countword(char const *s, char c)
+static size_t	ft_countword(char const *s, char c)
 {
 	size_t	tab_nb;
 	size_t	i;
 
 	i = 0;
 	tab_nb = 0;
-	if (!s || !c)
-		return (0);
 	while (s[i])
 	{
 		while (s[i] == c && s[i])
@@ -72,30 +70,28 @@ static char	*ft_cpyword(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
 	size_t	place_tab;
 	char	**tab;
 
-	i = 0;
 	place_tab = 0;
 	tab = (char **)malloc(sizeof(char *) * (ft_countword(s, c) + 1));
 	if (!tab)
 		return (NULL);
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] == c && s[i])
-			i++;
-		if (s[i] != c && s[i])
+		while (*s == c && *s)
+			s++;
+		if (*s != c && *s)
 		{
 			tab[place_tab++] = ft_cpyword(s, c);
 			if (!(tab[place_tab - 1]))
 			{
-				ft_clean(tab);
+				ft_malloc_error(tab);
 				return (NULL);
 			}
-			s += ft_strlen(tab[place_tab - 1]);
+			s = s + ft_strlen(tab[place_tab - 1]);
 		}
 	}
-	tab[place_tab] = '\0';
+	tab[place_tab] = NULL;
 	return (tab);
 }

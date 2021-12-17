@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 11:14:15 by chilee            #+#    #+#             */
-/*   Updated: 2021/12/16 11:48:07 by chilee           ###   ########.fr       */
+/*   Created: 2021/11/22 17:47:39 by chilee            #+#    #+#             */
+/*   Updated: 2021/11/22 18:12:16 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_isalnum(int c)
 {
-	size_t	i;
-	char	*dest;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	dest = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!dest)
-		return (NULL);
-	while (s[i])
-	{
-		dest[i] = (*f)(i, s[i]);
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	else
+		return (0);
 }
